@@ -4,6 +4,8 @@ Sitio web estático de la consultora (Vite + React + Tailwind). Sin dependencias
 
 ## Desarrollo
 
+Requiere **Node.js 18+** (recomendado 20 o 22). Si usás `nvm`: `nvm use`.
+
 ```bash
 npm install
 npm run dev
