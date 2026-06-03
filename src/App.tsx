@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "@/components/Layout";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import Contacto from "@/pages/Contacto";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/NotFound";
@@ -8,7 +9,9 @@ import SobreNosotros from "@/pages/SobreNosotros";
 
 export default function App() {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       <Route element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="sobre-nosotros" element={<SobreNosotros />} />
@@ -16,6 +19,7 @@ export default function App() {
         <Route path="contacto" element={<Contacto />} />
         <Route path="*" element={<NotFound />} />
       </Route>
-    </Routes>
+      </Routes>
+    </>
   );
 }

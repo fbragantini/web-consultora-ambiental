@@ -22,6 +22,10 @@ const services: Service[] = [
     desc: "Diseño e implementación de planes para minimizar impactos y asegurar prácticas sustentables en proyectos de todas las escalas.",
   },
   {
+    title: "Cartografía Digital",
+    desc: "Elaboración de mapas, capas geoespaciales y productos cartográficos digitales para apoyar estudios ambientales, permisos y gestión territorial.",
+  },
+  {
     title: "Auditorías Ambientales",
     desc: "Evaluación del desempeño ambiental de una organización o proyecto según normativa vigente nacional y provincial.",
   },
@@ -59,7 +63,7 @@ export default function Servicios() {
     <>
       <PageMeta
         title="Servicios — Consultora Ambiental Bragantini"
-        description="Estudios de impacto, monitoreos, planes de manejo, auditorías, remediaciones, recursos hídricos, residuos peligrosos y más."
+        description="Estudios de impacto, monitoreos, cartografía digital, auditorías, remediaciones, recursos hídricos, residuos peligrosos y más."
       />
 
       <section className="bg-gradient-soft">
@@ -76,7 +80,7 @@ export default function Servicios() {
       </section>
 
       <section className="container-page space-y-24 py-20">
-        {services.slice(0, 3).map((s, i) => (
+        {services.slice(0, 4).map((s, i) => (
           <div key={s.title} className="grid items-center gap-12 md:grid-cols-2">
             <div className={i % 2 === 1 ? "md:order-2" : ""}>
               <SafeImage
@@ -87,7 +91,7 @@ export default function Servicios() {
             </div>
             <div className={i % 2 === 1 ? "md:order-1" : ""}>
               <span className="text-xs font-semibold uppercase tracking-wider text-accent">
-                0{i + 1} · Servicio destacado
+                {String(i + 1).padStart(2, "0")} · Servicio destacado
               </span>
               <h2 className="mt-3 font-display text-3xl font-semibold md:text-4xl">{s.title}</h2>
               <p className="mt-4 text-muted-foreground">{s.desc}</p>
