@@ -2,7 +2,7 @@ import { type ReactNode } from "react";
 
 type Props = {
   label?: string;
-  aspect?: "video" | "square" | "portrait" | "wide";
+  aspect?: "video" | "square" | "portrait" | "wide" | "auto";
   className?: string;
   children?: ReactNode;
 };
@@ -12,13 +12,21 @@ const aspectClass = {
   square: "aspect-square",
   portrait: "aspect-[3/4]",
   wide: "aspect-[16/7]",
+  auto: "",
 };
 
 /** Placeholder para una imagen. Reemplazá con `<img src="..." alt="..." />` cuando tengas la foto. */
 export function ImageSlot({ label = "Foto", aspect = "video", className = "", children }: Props) {
+  const frameClass =
+    aspect === "auto"
+      ? children
+        ? "w-full"
+        : "aspect-video min-h-[12rem] w-full"
+      : `${aspectClass[aspect]} w-full`;
+
   return (
     <div
-      className={`${aspectClass[aspect]} relative w-full overflow-hidden rounded-xl border border-border bg-secondary ${className}`}
+      className={`${frameClass} relative overflow-hidden rounded-xl border border-border bg-secondary ${className}`}
       data-image-slot
     >
       {children ? (

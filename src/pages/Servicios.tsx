@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { ImageSlot } from "@/components/ImageSlot";
 import { PageMeta } from "@/components/PageMeta";
+import { SafeImage } from "@/components/SafeImage";
 
 type Service = {
   title: string;
@@ -18,7 +18,7 @@ const services: Service[] = [
     desc: "Seguimiento sistemático de parámetros ambientales con reportes técnicos integrados según normativa vigente.",
   },
   {
-    title: "Planes de Manejo Ambiental",
+    title: "Planes de Monitoreo Ambiental",
     desc: "Diseño e implementación de planes para minimizar impactos y asegurar prácticas sustentables en proyectos de todas las escalas.",
   },
   {
@@ -79,7 +79,11 @@ export default function Servicios() {
         {services.slice(0, 3).map((s, i) => (
           <div key={s.title} className="grid items-center gap-12 md:grid-cols-2">
             <div className={i % 2 === 1 ? "md:order-2" : ""}>
-              <ImageSlot label={`Foto: ${s.title}`} aspect="video" />
+              <SafeImage
+                src={`/images/servicio-${i + 1}.jpg`}
+                alt={`Servicio destacado: ${s.title}`}
+                label={`Foto: ${s.title}`}
+              />
             </div>
             <div className={i % 2 === 1 ? "md:order-1" : ""}>
               <span className="text-xs font-semibold uppercase tracking-wider text-accent">

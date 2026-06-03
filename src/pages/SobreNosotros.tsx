@@ -1,5 +1,5 @@
-import { ImageSlot } from "@/components/ImageSlot";
 import { PageMeta } from "@/components/PageMeta";
+import { SafeImage } from "@/components/SafeImage";
 
 const reasons = [
   { title: "Trabajo en todo el NOA", desc: "Proyectos en diversas provincias del Noroeste Argentino, con presencia en terreno." },
@@ -30,7 +30,7 @@ export default function SobreNosotros() {
 
       <section className="container-page space-y-24 py-24">
         <div className="grid items-center gap-12 md:grid-cols-2">
-          <ImageSlot label="Foto del equipo" aspect="video" />
+          <SafeImage src="/images/equipo.jpg" alt="Foto del equipo" label="Foto del equipo" />
           <div>
             <h2 className="font-display text-3xl font-semibold md:text-4xl">Nuestro equipo</h2>
             <p className="mt-4 text-muted-foreground">
@@ -61,7 +61,7 @@ export default function SobreNosotros() {
 
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="md:order-2">
-            <ImageSlot label="Trabajo en terreno" aspect="video" />
+            <SafeImage src="/images/trabajo-en-terreno.jpg" alt="Trabajo en terreno" label="Trabajo en terreno" />
           </div>
           <div className="md:order-1">
             <h2 className="font-display text-3xl font-semibold md:text-4xl">Compromiso con el ambiente</h2>

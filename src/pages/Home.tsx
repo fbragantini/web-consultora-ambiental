@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { ImageSlot } from "@/components/ImageSlot";
 import { PageMeta } from "@/components/PageMeta";
+import { SafeImage } from "@/components/SafeImage";
 
 const highlights = [
   { title: "Estudios de impacto", desc: "Evaluación detallada y propuestas de mitigación para proyectos." },
@@ -46,7 +46,12 @@ export default function Home() {
             </div>
           </div>
           <div className="relative">
-            <ImageSlot label="Imagen principal" aspect="portrait" className="border-white/15 shadow-soft" />
+            <SafeImage
+              src="/images/hero.jpg"
+              alt="Imagen principal"
+              label="Imagen principal"
+              className="border-white/15 shadow-soft"
+            />
           </div>
         </div>
         <div className="pointer-events-none absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-teal/40 blur-3xl" aria-hidden="true" />
@@ -71,7 +76,7 @@ export default function Home() {
 
       <section className="container-page space-y-24 pb-24">
         <div className="grid items-center gap-12 md:grid-cols-2">
-          <ImageSlot label="Trabajo de campo" aspect="video" />
+          <SafeImage src="/images/trabajo-de-campo.jpg" alt="Trabajo de campo" label="Trabajo de campo" />
           <div>
             <span className="text-xs font-semibold uppercase tracking-wider text-accent">Quiénes somos</span>
             <h2 className="mt-3 font-display text-3xl font-semibold md:text-4xl">Un equipo comprometido con el ambiente</h2>
@@ -89,7 +94,7 @@ export default function Home() {
 
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="md:order-2">
-            <ImageSlot label="Monitoreos y muestreos" aspect="video" />
+            <SafeImage src="/images/monitoreos-y-muestreos.jpg" alt="Monitoreos y muestreos" label="Monitoreos y muestreos" />
           </div>
           <div className="md:order-1">
             <span className="text-xs font-semibold uppercase tracking-wider text-accent">Nuestros servicios</span>
